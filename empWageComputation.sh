@@ -21,25 +21,30 @@ echo "Total wage per day :" $WagePerDay
 
 PartTimeHour=8;
 PartTimeWage=$(($WagePerHour*$PartTimeHour));
-
-#Find work hour of employee
-echo "Enter 1 for full day and 2 for part time"
-read choice
-case $choice in
-	1) WorkHourFullDay=8;;
-	2) WorkHourPartTime=8;;
-	*) WorkHour=0;;
-esac
-
 WorkingDayPerMonth=20;
-TotalWagePerMonth=$(($WorkingDayPerMonth*$TotalWagePerDay));
+TotalWagePerMonth=$(($WorkingDayPerMonth*$WagePerDay));
 
 echo "Total Wage Per Month : "$TotalWagePerMonth
+
+function getWorkHour(){
+	case $1 in
+		1 )
+			WorkHour=8;;
+		2 )
+			WorkHour=8;;
+		*)
+			WorkHour=0;;
+	esac
+	echo "Work hour =" $WorkHour
+}
+WorkDonePerDay=$( getWorkHour $((RANDOM%3)) );
+
 
 day=1;
 while [ $day -le $WorkingDayPerMonth ]
 do
-	Wage=$(($TotalWagePerDay*$day))
+	Wage=$(($WagePerDay*$day))
 	echo "Wage for $day :" $Wage
 	day=$(($day+1));
 done
+
