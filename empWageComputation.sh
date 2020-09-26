@@ -35,3 +35,11 @@ WorkingDayPerMonth=20;
 TotalWagePerMonth=$(($WorkingDayPerMonth*$TotalWagePerDay));
 
 echo "Total Wage Per Month : "$TotalWagePerMonth
+
+day=1;
+while [ $day -le $WorkingDayPerMonth ]
+do
+	Wage=$(($TotalWagePerDay*$day))
+	echo "Wage for $day :" $Wage
+	day=$(($day+1));
+done
