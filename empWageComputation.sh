@@ -48,3 +48,6 @@ do
 	day=$(($day+1));
 done
 
+declare -a array #Array store daily wage and monthly wage
+array=($WagePerDay $TotalWagePerMonth)
+echo "Daily wage along with Total wage :" ${array[@]}
