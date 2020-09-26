@@ -30,3 +30,8 @@ case $choice in
 	2) WorkHourPartTime=8;;
 	*) WorkHour=0;;
 esac
+
+WorkingDayPerMonth=20;
+TotalWagePerMonth=$(($WorkingDayPerMonth*$TotalWagePerDay));
+
+echo "Total Wage Per Month : "$TotalWagePerMonth
