@@ -11,3 +11,10 @@ then
 else
 	echo "Employee is absent"
 fi
+
+#Calulate daily wage of employee
+WagePerHour=20;
+FullDay=8;
+WagePerDay=$(($WagePerHour*$FullDay));
+
+echo "Total wage per day :" $WagePerDay
