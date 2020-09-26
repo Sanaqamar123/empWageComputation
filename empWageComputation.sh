@@ -21,3 +21,12 @@ echo "Total wage per day :" $WagePerDay
 
 PartTimeHour=8;
 PartTimeWage=$(($WagePerHour*$PartTimeHour));
+
+#Find work hour of employee
+echo "Enter 1 for full day and 2 for part time"
+read choice
+case $choice in
+	1) WorkHourFullDay=8;;
+	2) WorkHourPartTime=8;;
+	*) WorkHour=0;;
+esac
