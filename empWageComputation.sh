@@ -40,14 +40,16 @@ function getWorkHour(){
 WorkDonePerDay=$( getWorkHour $((RANDOM%3)) );
 
 
+declare -a store #declare array to store wages with day
 day=1;
 while [ $day -le $WorkingDayPerMonth ]
 do
 	Wage=$(($WagePerDay*$day))
-	echo "Wage for $day :" $Wage
 	day=$(($day+1));
+	store[$day]=$Wage
 done
 
 declare -a array #Array store daily wage and monthly wage
 array=($WagePerDay $TotalWagePerMonth)
 echo "Daily wage along with Total wage :" ${array[@]}
+echo "Wage for $day :" ${store[@]} #print wages day by day
