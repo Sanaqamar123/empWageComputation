@@ -18,3 +18,6 @@ FullDay=8;
 WagePerDay=$(($WagePerHour*$FullDay));
 
 echo "Total wage per day :" $WagePerDay
+
+PartTimeHour=8;
+PartTimeWage=$(($WagePerHour*$PartTimeHour));
